@@ -6,6 +6,7 @@
   "navbar": {
     "home": "Thuis",
     "about": "Over Mij",
+    "projects": "Projecten",
     "contact": "Contact"
   }
 }

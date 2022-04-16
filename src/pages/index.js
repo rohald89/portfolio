@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { useTranslations } from 'next-intl';
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
 export default function Home({ content }) {
   const t = useTranslations('index');
@@ -26,13 +25,9 @@ export default function Home({ content }) {
     </div>
   );
 }
-
+import { gql } from '@apollo/client';
+import client from 'src/apollo-client';
 export async function getStaticProps({ locale }) {
-  const client = new ApolloClient({
-    uri: process.env.API_ENDPOINT,
-    cache: new InMemoryCache(),
-  });
-
   const data = await client.query({
     query: gql`
       query HomePage($locale: Locale!) {
