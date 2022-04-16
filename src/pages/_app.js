@@ -1,11 +1,11 @@
 import { NextIntlProvider } from 'next-intl';
-import Navbar from '@components/Navbar';
+import Header from '@components/Header';
 import '@styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
     <NextIntlProvider messages={pageProps.content}>
-      <Navbar />
+      <Header />
       <Component {...pageProps} />
     </NextIntlProvider>
   );

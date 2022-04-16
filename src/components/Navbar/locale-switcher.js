@@ -9,9 +9,15 @@ export default function LocaleSwitcher() {
   return (
     <>
       {otherLocales.map(locale => {
+        let flag = '';
+        if (locale === 'nl') {
+          flag = '🇳🇱';
+        } else if (locale === 'en') {
+          flag = '🇺🇸';
+        }
         return (
           <Link key={locale} href={{ pathname, query }} as={asPath} locale={locale}>
-            <a>Switch to &quot;{locale}&quot;</a>
+            <a>{flag}</a>
           </Link>
         );
       })}

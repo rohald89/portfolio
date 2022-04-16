@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import LocaleSwitcher from '../../locale-switcher';
+import LocaleSwitcher from './locale-switcher';
 import { useTranslations } from 'next-intl';
 
 export default function Navbar() {
@@ -9,10 +9,10 @@ export default function Navbar() {
       <Link href="/">
         <a>{t('home')}</a>
       </Link>
-      <Link href="/ssg">
+      <Link href="/about">
         <a>{t('about')}</a>
       </Link>
-      <Link href="/ssr">
+      <Link href="/contact">
         <a>{t('contact')}</a>
       </Link>
       <LocaleSwitcher />
