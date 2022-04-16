@@ -1,0 +1,11 @@
+{
+  "index": {
+    "heading": "This is the heading from en.json",
+    "content": "This is the dummy content of the page. This is just placeholder content for this page and is written in English. "
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  }
+}

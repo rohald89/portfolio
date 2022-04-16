@@ -1,0 +1,11 @@
+{
+  "index": {
+    "heading": "Dit is de heading vanuit nl.json",
+    "content": "Dit is was dummy content voor de pagina. Slechts wat placeholder content voor deze pagina geschreven in het Nederlands."
+  },
+  "navbar": {
+    "home": "Thuis",
+    "about": "Over Mij",
+    "contact": "Contact"
+  }
+}
