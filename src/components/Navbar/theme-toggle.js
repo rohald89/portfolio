@@ -12,22 +12,19 @@ const ThemeChanger = () => {
   if (!mounted) return null;
 
   return (
-    <div>
-      The current theme is: {theme}
-      <ButtonStyle theme={theme} onClick={() => setTheme('light')}>
-        Light Mode
-      </ButtonStyle>
-      <ButtonStyle theme={theme} onClick={() => setTheme('dark')}>
-        Dark Mode
-      </ButtonStyle>
-    </div>
+    <ButtonStyle
+      theme={theme}
+      onClick={() => (theme === 'light' ? setTheme('dark') : setTheme('light'))}
+    >
+      {theme === 'light' ? 'dark' : 'light'}
+    </ButtonStyle>
   );
 };
 export default ThemeChanger;
 
 const ButtonStyle = styled.button`
-  background: var(--purple);
-  color: var(--fg);
+  background: var(--purple-light);
+  color: var(--white);
   padding: 0.5rem;
   margin: 0.5rem;
   border: none;

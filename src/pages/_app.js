@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --fg: #0C0E16;
     --bg: #f8f8f8;
-    --primary: #373B53;
+    --primary: #DFE3FA;
     --secondary: #7E88C3
     --purple: #7c5DFA;
     --purple-light: #9277ff;
@@ -16,7 +16,9 @@ const GlobalStyles = createGlobalStyle`
     --grey-light: #DFE3FA;
     --grey-blue: #7E88C3
     --red: #EC5757;
-    --red-light: #ff9277
+    --red-light: #ff9277;
+    --max-width: 1400px;
+    --white: #fff;
   }
 
   [data-theme="dark"] {
