@@ -10,7 +10,11 @@ export function middleware(request) {
 
   if (shouldHandleLocale) {
     const url = request.nextUrl.clone();
-    url.pathname = `/en${request.nextUrl.pathname}`;
+    if (request.cookies.NEXT_LOCALE) {
+      url.pathname = `/${request.cookies.NEXT_LOCALE}${request.nextUrl.pathname}`;
+    } else {
+      url.pathname = `/en${request.nextUrl.pathname}`;
+    }
     return NextResponse.redirect(url);
   }
 

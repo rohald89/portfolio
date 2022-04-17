@@ -15,7 +15,7 @@ export default function LocaleSwitcher() {
             <ChangeLocale
               onClick={() =>
                 setLanguagePreference(locale, {
-                  SameSite: 'Strict',
+                  SameSite: 'Lax',
                   Secure: true,
                 })
               }
