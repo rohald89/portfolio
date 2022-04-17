@@ -2,12 +2,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@locales/*": ["src/locales/*"],
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "@lib/*": ["src/lib/*"],
       "@styles/*": ["src/styles/*"],
       "@util/*": ["src/util/*"],
-      "@locales/*": ["src/locales/*"],
       "@src/*": ["src/*"]
     }
   }

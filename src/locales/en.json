@@ -3,10 +3,16 @@
     "heading": "This is the heading from en.json",
     "content": "This is the dummy content of the page. This is just placeholder content for this page and is written in English. "
   },
-  "navbar": {
+  "Navbar": {
     "home": "Home",
     "about": "About",
     "projects": "Projects",
     "contact": "Contact"
+  },
+  "Project": {
+    "title": "Project Title",
+    "description": "Project Description",
+    "image": "Project Image",
+    "link": "Project Link"
   }
 }

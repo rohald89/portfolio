@@ -12,7 +12,16 @@ export default function LocaleSwitcher() {
       {otherLocales.map(locale => {
         return (
           <Link key={locale} href={{ pathname, query }} as={asPath} locale={locale}>
-            <ChangeLocale onClick={() => setLanguagePreference(locale)}>{locale}</ChangeLocale>
+            <ChangeLocale
+              onClick={() =>
+                setLanguagePreference(locale, {
+                  SameSite: 'Strict',
+                  Secure: true,
+                })
+              }
+            >
+              {locale}
+            </ChangeLocale>
           </Link>
         );
       })}
@@ -21,7 +30,12 @@ export default function LocaleSwitcher() {
 }
 
 const ChangeLocale = styled.a`
-  background: var(--purple-light);
+  background: var(--purple);
+  font-size: 1.2rem;
+  height: 40px;
+  width: 40px;
+  display: grid;
+  place-items: center;
   color: var(--white);
   padding: 0.5rem;
   margin: 0.5rem;

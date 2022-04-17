@@ -6,7 +6,6 @@ import Header from '@components/Header';
 const InnerStyles = styled.div`
   max-width: var(--max-width);
   width: min(100%, var(--max-width));
-  padding: 0 2rem;
   margin: 4rem auto;
 `;
 
@@ -17,6 +16,8 @@ const Page = ({ children }) => (
     <Footer />
   </>
 );
+
+Page.messages = ['Page', ...Header.messages];
 
 Page.propTypes = {
   children: PropTypes.any,

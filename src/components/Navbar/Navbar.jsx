@@ -1,12 +1,19 @@
 import Link from 'next/link';
-import LocaleSwitcher from './locale-switcher';
 import { useTranslations } from 'next-intl';
-import ThemeChanger from './theme-toggle';
+import styled from 'styled-components';
+
+const NavStyles = styled.nav`
+  margin: 0 auto;
+
+  & > a {
+    margin-inline: 0.5rem;
+  }
+`;
 
 export default function Navbar() {
-  const t = useTranslations('navbar');
+  const t = useTranslations('Navbar');
   return (
-    <nav>
+    <NavStyles>
       <Link href="/">
         <a>{t('home')}</a>
       </Link>
@@ -19,8 +26,8 @@ export default function Navbar() {
       <Link href="/contact">
         <a>{t('contact')}</a>
       </Link>
-      <LocaleSwitcher />
-      <ThemeChanger />
-    </nav>
+    </NavStyles>
   );
 }
+
+Navbar.messages = ['Navbar'];

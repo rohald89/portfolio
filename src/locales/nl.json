@@ -3,10 +3,16 @@
     "heading": "Dit is de heading vanuit nl.json",
     "content": "Dit is was dummy content voor de pagina. Slechts wat placeholder content voor deze pagina geschreven in het Nederlands."
   },
-  "navbar": {
+  "Navbar": {
     "home": "Thuis",
     "about": "Over Mij",
     "projects": "Projecten",
     "contact": "Contact"
+  },
+  "Project": {
+    "title": "Project Naam",
+    "description": "Project Omschrijving",
+    "image": "Project Foto",
+    "link": "Project Link"
   }
 }
