@@ -16,8 +16,9 @@ const GlobalStyles = createGlobalStyle`
     --grey-blue: #7E88C3;
     --red: #EC5757;
     --red-light: #ff9277;
+    --white: 0 0% 100%;
+
     --max-width: 1400px;
-    --white: #fff;
   }
 
   [data-theme="dark"] {
@@ -25,6 +26,22 @@ const GlobalStyles = createGlobalStyle`
     --bg: #141625;
     --primary: #1e2139;
     --secondary: #252945;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  body {
+    background: var(--bg);
   }
 `;
 
