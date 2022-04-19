@@ -12,7 +12,7 @@ const FooterStyles = styled.footer`
   );
   backdrop-filter: blur(20px);
   width: 100%;
-  padding: 2rem;
+  padding: 2rem 0;
   border-top: 2px solid hsl(var(--white) / 0.1);
 `;
 
