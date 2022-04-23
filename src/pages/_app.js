@@ -7,10 +7,10 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --fg: #0C0E16;
     --bg: #f8f8f8;
-    --primary: #DFE3FA;
-    --secondary: #7E88C3;
-    --purple: #7c5DFA;
-    --purple-light: #9277ff;
+    --primary: hsl(231.11111111111111, 72.97297297297298%, 92.74509803921569%);
+    --secondary: hsl(231.30434782608697, 36.50793650793649%, 62.94117647058823%);
+    --purple: 252 94% 67%;
+    --purple-light: 252 100% 73%;
     --grey: #888eb0;
     --grey-light: #DFE3FA;
     --grey-blue: #7E88C3;

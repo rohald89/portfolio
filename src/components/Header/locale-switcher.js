@@ -30,7 +30,7 @@ export default function LocaleSwitcher() {
 }
 
 const ChangeLocale = styled.a`
-  background: var(--purple);
+  background: hsl(var(--purple));
   font-size: 1.2rem;
   height: 40px;
   width: 40px;

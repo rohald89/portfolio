@@ -14,5 +14,9 @@
     "description": "Project Omschrijving",
     "image": "Project Foto",
     "link": "Project Link"
+  },
+  "about": {
+    "title": "Over Mij",
+    "description": "Tekst over mij"
   }
 }

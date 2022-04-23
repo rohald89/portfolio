@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
+import ActiveLink from './ActiveLink';
 
 const NavToggle = styled.button`
   justify-self: start;
@@ -48,6 +49,9 @@ const NavStyles = styled.nav`
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
+    &.active {
+      color: red;
+    }
   }
 
   @media (max-width: 50rem) {
@@ -75,6 +79,8 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsOpen(prev => !prev);
   };
+
+  console.log(t);
   return (
     <>
       <NavToggle
@@ -86,18 +92,28 @@ export default function Navbar() {
         <span className="sr-only">Menu</span>
       </NavToggle>
       <NavStyles data-visible={isOpen}>
-        <Link href="/">
-          <a>{t('home')}</a>
-        </Link>
-        <Link href="/about">
-          <a>{t('about')}</a>
-        </Link>
-        <Link href="/projects">
-          <a>{t('projects')}</a>
-        </Link>
-        <Link href="/contact">
-          <a>{t('contact')}</a>
-        </Link>
+        <ul>
+          <li>
+            <ActiveLink activeClassName="active" href="/">
+              <a>{t('home')}</a>
+            </ActiveLink>
+          </li>
+          <li>
+            <ActiveLink activeClassName="active" href="/about">
+              <a>{t('about')}</a>
+            </ActiveLink>
+          </li>
+          <li>
+            <ActiveLink activeClassName="active" href="/projects">
+              <a>{t('projects')}</a>
+            </ActiveLink>
+          </li>
+          <li>
+            <ActiveLink activeClassName="active" href="/contact">
+              <a>{t('contact')}</a>
+            </ActiveLink>
+          </li>
+        </ul>
       </NavStyles>
     </>
   );

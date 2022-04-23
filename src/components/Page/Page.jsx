@@ -6,6 +6,7 @@ import Header from '@components/Header';
 const InnerStyles = styled.div`
   max-width: var(--max-width);
   width: min(90%, var(--max-width));
+  min-height: 200vh;
   margin: 4rem auto;
 `;
 

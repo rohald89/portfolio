@@ -23,7 +23,7 @@ const ThemeChanger = () => {
 export default ThemeChanger;
 
 const ButtonStyle = styled.button`
-  background: var(--purple);
+  background: hsl(var(--purple));
   font-size: 1.2rem;
   color: var(--white);
   padding: 0.5rem;

@@ -14,5 +14,9 @@
     "description": "Project Description",
     "image": "Project Image",
     "link": "Project Link"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "This is the dummy content of the page. This is just placeholder content for this page and is written in English. "
   }
 }
