@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import ActiveLink from './ActiveLink';
+import { useRouter } from 'next/router';
 
 const NavToggle = styled.button`
   justify-self: start;
@@ -30,20 +31,19 @@ const NavToggle = styled.button`
   }
 `;
 
-const NavStyles = styled.nav`
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    color: white;
-    display: flex;
-    height: 100%;
-    li {
-      &:not(:last-child) {
-        margin-right: 2rem;
-      }
+const NavStyles = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: white;
+  display: flex;
+  height: 100%;
+  li {
+    &:not(:last-child) {
+      margin-right: 2rem;
     }
   }
+
   a {
     color: white;
     text-decoration: none;
@@ -64,9 +64,8 @@ const NavStyles = styled.nav`
     transform: translateY(-100%);
     transition: transform 0.35s ease-in-out;
     background: black;
-    ul {
-      flex-direction: column;
-    }
+    flex-direction: column;
+
     &[data-visible='true'] {
       transform: translateY(0);
     }
@@ -76,13 +75,14 @@ const NavStyles = styled.nav`
 export default function Navbar() {
   const t = useTranslations('Navbar');
   const [isOpen, setIsOpen] = useState(false);
+  const { locale } = useRouter();
   const toggleMenu = () => {
     setIsOpen(prev => !prev);
   };
 
   console.log(t);
   return (
-    <>
+    <nav>
       <NavToggle
         onClick={toggleMenu}
         aria-controls="primary-navigation"
@@ -92,30 +92,28 @@ export default function Navbar() {
         <span className="sr-only">Menu</span>
       </NavToggle>
       <NavStyles data-visible={isOpen}>
-        <ul>
-          <li>
-            <ActiveLink activeClassName="active" href="/">
-              <a>{t('home')}</a>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink activeClassName="active" href="/about">
-              <a>{t('about')}</a>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink activeClassName="active" href="/projects">
-              <a>{t('projects')}</a>
-            </ActiveLink>
-          </li>
-          <li>
-            <ActiveLink activeClassName="active" href="/contact">
-              <a>{t('contact')}</a>
-            </ActiveLink>
-          </li>
-        </ul>
+        <li>
+          <ActiveLink activeClassName="active" href="/">
+            <a>{t('home')}</a>
+          </ActiveLink>
+        </li>
+        <li>
+          <ActiveLink activeClassName="active" href="/about">
+            <a>{t('about')}</a>
+          </ActiveLink>
+        </li>
+        <li>
+          <ActiveLink activeClassName="active" href="/projects">
+            <a>{t('projects')}</a>
+          </ActiveLink>
+        </li>
+        <li>
+          <ActiveLink activeClassName="active" href="/contact">
+            <a>{t('contact')}</a>
+          </ActiveLink>
+        </li>
       </NavStyles>
-    </>
+    </nav>
   );
 }
 
