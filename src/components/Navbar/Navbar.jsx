@@ -45,12 +45,35 @@ const NavStyles = styled.ul`
   }
 
   a {
-    color: white;
+    color: hsla(0, 0%, 100%, 0.6);
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      right: 0;
+      width: 0;
+      height: 3px;
+      background: hsl(var(--purple-light));
+      margin-top: 0.5rem;
+      transition: width 0.3s ease-in-out;
+    }
     &.active {
-      color: red;
+      color: white;
+      &::after {
+        width: 1.4rem;
+      }
+    }
+
+    &:hover {
+      color: white;
+      &::after {
+        width: 100%;
+      }
     }
   }
 
