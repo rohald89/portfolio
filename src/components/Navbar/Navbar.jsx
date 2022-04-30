@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
@@ -98,7 +97,6 @@ const NavStyles = styled.ul`
 export default function Navbar() {
   const t = useTranslations('Navbar');
   const [isOpen, setIsOpen] = useState(false);
-  const { locale } = useRouter();
   const toggleMenu = () => {
     setIsOpen(prev => !prev);
   };

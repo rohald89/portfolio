@@ -4,16 +4,10 @@ import styled from 'styled-components';
 const FooterStyles = styled.footer`
   position: fixed;
   bottom: 2rem;
-  background: linear-gradient(
-    to right,
-    hsl(var(--white) / 0),
-    hsl(var(--white) / 0.1),
-    hsl(var(--white) / 0)
-  );
-  backdrop-filter: blur(20px);
+  background: linear-gradient(to right, hsl(var(--bg)), hsl(var(--primary)), hsl(var(--bg)));
   width: 100%;
   padding: 2rem 0;
-  border-top: 2px solid hsl(var(--white) / 0.1);
+  border-top: 2px solid hsl(var(--primary) / 0.6);
 `;
 
 const Footer = () => {

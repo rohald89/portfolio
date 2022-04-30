@@ -5,10 +5,10 @@ import '@styles/globals.css';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --fg: #0C0E16;
-    --bg: #f8f8f8;
-    --primary: hsl(231.11111111111111, 72.97297297297298%, 92.74509803921569%);
-    --secondary: hsl(231.30434782608697, 36.50793650793649%, 62.94117647058823%);
+    --fg: 228 29.4% 6.667%;
+    --bg: 0 0% 97%;
+    --primary: 231 73% 93%;
+    --secondary: 231 36% 63%;
     --purple: 252 94% 67%;
     --purple-light: 252 100% 73%;
     --grey: #888eb0;
@@ -22,10 +22,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   [data-theme="dark"] {
-    --fg: #fff;
-    --bg: #141625;
-    --primary: #1e2139;
-    --secondary: #252945;
+    --fg: 0 0% 100%;
+    --bg: 233 30% 11%;
+    --primary: 233 31% 17%;
+    --secondary: 232.5 30.2% 20.78%;
   }
 
   .sr-only {
@@ -41,7 +41,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: var(--bg);
+    background: hsl(var(--bg));
+    color: hsl(var(--fg));
   }
 `;
 
