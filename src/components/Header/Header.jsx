@@ -49,7 +49,8 @@ const HeaderStyles = styled.header`
   transition: background-color 0.4s ease-in-out;
 
   &.scrolled {
-    background-color: hsl(var(--primary));
+    background: var(--background-gradient);
+    border-bottom: 2px solid hsl(var(--primary) / 0.6);
   }
 
   & > div {

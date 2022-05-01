@@ -13,11 +13,11 @@ const GlobalStyles = createGlobalStyle`
     --purple-light: 252 100% 73%;
     --grey: #888eb0;
     --grey-light: #DFE3FA;
-    --grey-blue: #7E88C3;
+    --grey-blue: 231.3 36.5% 62.9%;
     --red: #EC5757;
     --red-light: #ff9277;
     --white: 0 0% 100%;
-
+    --background-gradient: linear-gradient(to right, hsl(var(--bg)), hsl(var(--primary)), hsl(var(--bg)));
     --max-width: 1400px;
   }
 

@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 const SkipToContent = () => {
-  return <SkipStyles href="#main">Skip to main content</SkipStyles>;
+  return (
+    <SkipStyles href="#main" id="skip-to-main">
+      Skip to main content
+    </SkipStyles>
+  );
 };
 
 const SkipStyles = styled.a`
@@ -9,9 +13,11 @@ const SkipStyles = styled.a`
   top: 0;
   left: 50%;
   z-index: 9999;
-  background: hsl(var(--primary));
-  color: hsl(var(--fg));
-  padding: 1.5em 2em;
+  background: hsl(var(--grey-blue));
+  color: hsl(var(--bg));
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 1em 1.5em;
   margin-inline: auto;
   transform: translateY(-100%);
 

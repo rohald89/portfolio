@@ -34,7 +34,7 @@ const NavStyles = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  color: white;
+  color: hsl(var(--fg));
   display: flex;
   height: 100%;
   li {
@@ -44,7 +44,7 @@ const NavStyles = styled.ul`
   }
 
   a {
-    color: hsla(0, 0%, 100%, 0.6);
+    color: hsl(var(--fg) / 0.6);
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
@@ -62,14 +62,14 @@ const NavStyles = styled.ul`
       transition: width 0.3s ease-in-out;
     }
     &.active {
-      color: white;
+      color: hsl(var(--fg));
       &::after {
         width: 1.4rem;
       }
     }
 
     &:hover {
-      color: white;
+      color: hsl(var(--fg));
       &::after {
         width: 100%;
       }
