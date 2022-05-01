@@ -3,18 +3,23 @@ import pick from 'lodash/pick';
 import Page from '@components/Page';
 import client from '@src/apollo-client';
 import { useTranslations } from 'next-intl';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote } from 'next-mdx-remote';
+import Logo from '@components/shared/Logo';
 
-const BlogPost = ({ article }) => {
-  const t = useTranslations('Project');
-  console.log(article);
+const components = { Logo };
+
+const BlogPost = ({ blogpost }) => {
+  //   const t = useTranslations('Project');
   return (
     <Page>
-      <h2>{article.title}</h2>
+      <h2>{blogpost.title}</h2>
+      <MDXRemote {...blogpost.article} components={components} />
     </Page>
   );
 };
 
-// Project.messages = ['Project', ...Page.messages];
+BlogPost.messages = ['BlogPost', ...Page.messages];
 
 export async function getStaticProps({ params, locale }) {
   const data = await client.query({
@@ -24,6 +29,7 @@ export async function getStaticProps({ params, locale }) {
           id
           slug
           title
+          article
         }
       }
     `,
@@ -42,12 +48,12 @@ export async function getStaticProps({ params, locale }) {
     //   }
 
     variables: {
-      slug: params.articleSlug,
+      slug: params.blogpostSlug,
       //   locale,
     },
   });
 
-  let article = data.data.blogpost;
+  let blogpost = data.data.blogpost;
 
   //   if (article.localizations.length) {
   //     article = {
@@ -59,7 +65,10 @@ export async function getStaticProps({ params, locale }) {
   return {
     props: {
       messages: pick(await import(`../../locales/${locale}.json`), BlogPost.messages),
-      article,
+      blogpost: {
+        ...blogpost,
+        article: await serialize(blogpost.article),
+      },
     },
   };
 }
@@ -71,7 +80,6 @@ export async function getStaticPaths({ locales }) {
         blogposts {
           id
           title
-          article
           slug
         }
       }
@@ -81,7 +89,7 @@ export async function getStaticPaths({ locales }) {
   const paths = data.data.blogposts.map(blog => {
     return {
       params: {
-        articleSlug: blog.slug,
+        blogpostSlug: blog.slug,
       },
     };
   });
