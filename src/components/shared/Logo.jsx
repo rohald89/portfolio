@@ -6,6 +6,7 @@ const LogoStyles = styled.h1`
   font-weight: bold;
   background-image: linear-gradient(to left, hsl(var(--purple) / 0.8), hsl(var(--purple-light)));
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
 `;
 

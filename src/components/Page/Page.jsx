@@ -2,18 +2,21 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Footer from '@components/Footer';
 import Header from '@components/Header';
+import SkipToContent from '@components/shared/SkipToContent';
 
-const InnerStyles = styled.div`
+const InnerStyles = styled.main`
   max-width: var(--max-width);
   width: min(90%, var(--max-width));
   min-height: 200vh;
-  margin: 4rem auto;
+  margin-inline: auto;
+  padding-top: 6rem;
 `;
 
 const Page = ({ children }) => (
   <>
+    <SkipToContent />
     <Header />
-    <InnerStyles>{children}</InnerStyles>
+    <InnerStyles id="main">{children}</InnerStyles>
     <Footer />
   </>
 );

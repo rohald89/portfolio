@@ -36,7 +36,7 @@ const ChangeLocale = styled.a`
   width: 40px;
   display: grid;
   place-items: center;
-  color: var(--white);
+  color: hsl(var(--white));
   padding: 0.5rem;
   margin: 0.5rem;
   border: none;

@@ -49,7 +49,7 @@ const NavStyles = styled.ul`
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
-    transition: all 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
     &::after {
       content: '';
       position: absolute;

@@ -16,7 +16,7 @@ const ThemeChanger = () => {
       theme={theme}
       onClick={() => (theme === 'light' ? setTheme('dark') : setTheme('light'))}
     >
-      {theme === 'light' ? 'dark' : 'light'}
+      {theme === 'light' ? '🌞' : '🌜'}
     </ButtonStyle>
   );
 };
@@ -33,6 +33,6 @@ const ButtonStyle = styled.button`
   transition: all 0.2s ease-in-out;
   cursor: pointer;
   &:hover {
-    background: var(--purple-light);
+    background: hsl(var(--purple-light));
   }
 `;

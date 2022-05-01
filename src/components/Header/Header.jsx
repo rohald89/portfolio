@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Navbar from '@components/Navbar';
 import Logo from '@components/shared/Logo';
 import LocaleSwitcher from './locale-switcher';
@@ -6,13 +7,31 @@ import Wrapper from '@components/shared/Wrapper';
 import styled from 'styled-components';
 
 const Header = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const header = document.querySelector('header');
+      if (scrollTop > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
+
   return (
     <HeaderStyles>
       <Wrapper>
         <Logo />
-        <Navbar />
-        <LocaleSwitcher />
-        <ThemeChanger />
+        <div className="navigation">
+          <Navbar />
+          <LocaleSwitcher />
+          <ThemeChanger />
+        </div>
       </Wrapper>
     </HeaderStyles>
   );
@@ -22,13 +41,24 @@ Header.messages = ['Header', ...Navbar.messages];
 
 const HeaderStyles = styled.header`
   position: sticky;
-  top: 0;
-  background-color: var(--primary);
+  top: -4rem;
+  background-color: hsl(var(--primary) / 0);
+  z-index: 1;
   width: 100%;
+  padding-top: 4rem;
+  transition: background-color 0.4s ease-in-out;
+
+  &.scrolled {
+    background-color: hsl(var(--primary));
+  }
 
   & > div {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+  }
+  & .navigation {
+    display: flex;
     align-items: center;
   }
 `;
