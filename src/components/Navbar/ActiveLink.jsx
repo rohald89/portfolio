@@ -17,7 +17,6 @@ const ActiveLink = ({ children, activeClassName, ...props }) => {
       // Dynamic route will be matched via props.as
       // Static route will be matched via props.href
       const linkPathname = new URL(props.as || props.href, location.href).pathname;
-      console.log(linkPathname);
       // Using URL().pathname to get rid of query and hash
       let activePathname = new URL(asPath, location.href).pathname;
       if (activePathname !== '/') {

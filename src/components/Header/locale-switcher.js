@@ -7,6 +7,7 @@ export default function LocaleSwitcher() {
   const { locales, locale, pathname, query, asPath } = useRouter();
   const otherLocales = locales.filter(l => l !== locale && l !== 'default'); // Find all the locales apart from the current locale.
   const [, setLanguagePreference] = useCookie('NEXT_LOCALE', locale);
+  const flag = locale === 'en' ? '🇳🇱' : '🇬🇧';
   return (
     <>
       {otherLocales.map(locale => {
@@ -19,8 +20,9 @@ export default function LocaleSwitcher() {
                   Secure: true,
                 })
               }
+              aria-label={`Change language to ${otherLocales[0] === 'en' ? 'English' : 'Dutch'}`}
             >
-              {locale}
+              {flag}
             </ChangeLocale>
           </Link>
         );
@@ -29,16 +31,17 @@ export default function LocaleSwitcher() {
   );
 }
 
-const ChangeLocale = styled.a`
+const ChangeLocale = styled.button`
   background: hsl(var(--purple));
   font-size: 1.2rem;
-  height: 40px;
-  width: 40px;
-  display: grid;
-  place-items: center;
+  height: 3rem;
+  width: 3rem;
   color: hsl(var(--white));
   padding: 0.5rem;
   margin: 0.5rem;
   border: none;
-  border-radius: 50%;
+  border-radius: 99999px;
+  &:hover {
+    background: hsl(var(--purple-light));
+  }
 `;

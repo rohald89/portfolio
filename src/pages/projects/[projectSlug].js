@@ -19,7 +19,6 @@ const Project = ({ project }) => {
 Project.messages = ['Project', ...Page.messages];
 
 export async function getStaticProps({ params, locale }) {
-  console.log(params, locale);
   const data = await client.query({
     query: gql`
       query ProjectPage($slug: String, $locale: Locale!) {

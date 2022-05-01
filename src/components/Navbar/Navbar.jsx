@@ -101,7 +101,6 @@ export default function Navbar() {
     setIsOpen(prev => !prev);
   };
 
-  console.log(t);
   return (
     <nav>
       <NavToggle

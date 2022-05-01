@@ -25,13 +25,13 @@ export default ThemeChanger;
 const ButtonStyle = styled.button`
   background: hsl(var(--purple));
   font-size: 1.2rem;
-  color: var(--white);
+  height: 3rem;
+  width: 3rem;
+  color: hsl(var(--white));
   padding: 0.5rem;
   margin: 0.5rem;
   border: none;
-  border-radius: 0.25rem;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
+  border-radius: 99999px;
   &:hover {
     background: hsl(var(--purple-light));
   }
