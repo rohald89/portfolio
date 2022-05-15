@@ -6,15 +6,19 @@ import { useTranslations } from 'next-intl';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import Logo from '@components/shared/Logo';
+import Navbar from '@components/Navbar';
+import Wrapper from '@components/shared/Wrapper';
 
-const components = { Logo };
+const components = { Logo, Navbar };
 
 const BlogPost = ({ blogpost }) => {
   //   const t = useTranslations('Project');
   return (
     <Page>
-      <h2>{blogpost.title}</h2>
-      <MDXRemote {...blogpost.article} components={components} />
+      <Wrapper>
+        <h2>{blogpost.title}</h2>
+        <MDXRemote {...blogpost.article} components={components} />
+      </Wrapper>
     </Page>
   );
 };

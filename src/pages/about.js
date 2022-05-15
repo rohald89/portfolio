@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
 import Page from '@components/Page';
+import Wrapper from '@components/shared/Wrapper';
 
 export default function About() {
   const t = useTranslations('about');
@@ -16,8 +17,10 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Page>
-        <h2>{t('title')}</h2>
-        <p>{t('description')}</p>
+        <Wrapper>
+          <h2>{t('title')}</h2>
+          <p>{t('description')}</p>
+        </Wrapper>
       </Page>
     </div>
   );

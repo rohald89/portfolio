@@ -4,6 +4,8 @@ import { gql } from '@apollo/client';
 import client from 'src/apollo-client';
 import { useRouter } from 'next/router';
 import Page from '@components/Page';
+import Hero from '@components/Hero';
+import Wrapper from '@components/shared/Wrapper';
 
 export default function Home({ content }) {
   const t = useTranslations('index');
@@ -19,16 +21,19 @@ export default function Home({ content }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Page>
-        <div className="local-json">
-          <h2>From next-intl</h2>
-          <h1>{t('heading')}</h1>
-          <p>{t('content')}</p>
-        </div>
-        <div className="from-cms">
-          <h2>From graphCMS</h2>
-          <h1>{home.heroTitle}</h1>
-          <p>{home.heroText}</p>
-        </div>
+        <Hero />
+        <Wrapper>
+          <div className="local-json">
+            <h2>From next-intl</h2>
+            <h1>{t('heading')}</h1>
+            <p>{t('content')}</p>
+          </div>
+          <div className="from-cms">
+            <h2>From graphCMS</h2>
+            <h1>{home.heroTitle}</h1>
+            <p>{home.heroText}</p>
+          </div>
+        </Wrapper>
       </Page>
     </div>
   );

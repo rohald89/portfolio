@@ -6,8 +6,6 @@ import SkipToContent from '@components/shared/SkipToContent';
 import BackToTop from '@components/shared/BackToTop';
 
 const InnerStyles = styled.main`
-  max-width: var(--max-width);
-  width: min(90%, var(--max-width));
   min-height: 200vh;
   margin-inline: auto;
   padding-top: 6rem;

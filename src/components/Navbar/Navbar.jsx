@@ -12,7 +12,7 @@ const NavToggle = styled.button`
   background-image: url('/icon-hamburger.svg');
   background-position: 50%;
   background-repeat: no-repeat;
-  width: 1.5rem;
+  width: 2.75rem;
   aspect-ratio: 1;
   border: 0;
   order: -1;
@@ -25,7 +25,7 @@ const NavToggle = styled.button`
   }
 
   &:focus-visible {
-    outline: 5px solid white;
+    outline: 5px solid hsl(var(--fg));
     outline-offset: 5px;
   }
 `;
@@ -49,7 +49,7 @@ const NavStyles = styled.ul`
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
-    transition: width 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     &::after {
       content: '';
       position: absolute;
@@ -73,6 +73,10 @@ const NavStyles = styled.ul`
       &::after {
         width: 100%;
       }
+    }
+    &:focus-visible {
+      color: hsl(var(--fg));
+      border: 2px solid hsl(var(--fg));
     }
   }
 
@@ -107,11 +111,10 @@ export default function Navbar() {
         onClick={toggleMenu}
         aria-controls="primary-navigation"
         aria-expanded={isOpen}
+        aria-label="Menu"
         type="button"
-      >
-        <span className="sr-only">Menu</span>
-      </NavToggle>
-      <NavStyles data-visible={isOpen}>
+      ></NavToggle>
+      <NavStyles id="primary-navigation" data-visible={isOpen}>
         <li>
           <ActiveLink activeClassName="active" href="/">
             <a>{t('home')}</a>
