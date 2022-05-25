@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import styled from 'styled-components';
 import ActiveLink from './ActiveLink';
-import { useRouter } from 'next/router';
 
 const NavToggle = styled.button`
   justify-self: start;
