@@ -4,9 +4,12 @@ import Logo from '@components/shared/Logo';
 import LocaleSwitcher from './locale-switcher';
 import ThemeChanger from './theme-toggle';
 import Wrapper from '@components/shared/Wrapper';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
+import useScrollDirection from '@hooks/useScrollDirection';
 
 const Header = () => {
+    const scrollDirection = useScrollDirection();
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -24,7 +27,7 @@ const Header = () => {
   });
 
   return (
-    <HeaderStyles>
+    <HeaderStyles scrollDirection={scrollDirection}>
       <Wrapper>
         <Logo />
         <div className="navigation">
@@ -40,13 +43,19 @@ const Header = () => {
 Header.messages = ['Header', ...Navbar.messages];
 
 const HeaderStyles = styled.header`
+${props => props.scrollDirection === 'up' && css`
+transform: translateY(0);
+`}
+${props => props.scrollDirection === 'down' && css`
+transform: translateY(-100%);
+`}
   position: sticky;
   top: -4rem;
   background-color: hsl(var(--primary) / 0);
   z-index: 1;
   width: 100%;
   padding-top: 4rem;
-  transition: background-color 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 
   &.scrolled {
     background: var(--background-gradient);
